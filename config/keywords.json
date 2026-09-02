@@ -1,0 +1,57 @@
+{
+  "_comment": "A tour is included if (tier >= min_tier OR name matches a keyword) AND it matches no exclude_keyword. Lichess tiers: 3 = normal, 4 = high, 5 = best.",
+
+  "min_tier": 5,
+
+  "keywords": [
+    "candidates",
+    "world championship",
+    "tata steel",
+    "grand chess tour",
+    "norway chess",
+    "fide grand prix",
+    "freestyle chess",
+    "world rapid",
+    "world blitz",
+    "olympiad",
+    "global chess league",
+    "sinquefield"
+  ],
+
+  "_exclude_comment": "Drops lower sections of a festival (Prague ships Masters + Challengers + Futures; only Masters is major) and age/rating-restricted fields. Deliberately does NOT exclude 'women' - the Women's World Championship is a major event.",
+  "exclude_keywords": [
+    "futures",
+    "challengers",
+    "amateur",
+    "senior",
+    "veteran",
+    "junior",
+    "cadet",
+    "category",
+    "division",
+    "u08",
+    "u10",
+    "u12",
+    "u14",
+    "u16",
+    "u18",
+    "u20"
+  ],
+
+  "_rounds_comment": "Rounds whose name matches these are scheduling artifacts, not playing sessions.",
+  "skip_round_patterns": [
+    "ceremony",
+    "drawing of lots",
+    "rest day",
+    "free day",
+    "arrival",
+    "departure",
+    "technical meeting"
+  ],
+
+  "_horizon_comment": "Ignore rounds further out than this; schedules that far ahead churn.",
+  "max_days_ahead": 400,
+
+  "_collapse_comment": "Merge a tour's rounds that fall on the same UTC day into one event spanning first start to last end. Team leagues play several simultaneous matches per day; without this each playing day becomes 4 separate entries.",
+  "collapse_same_day": true
+}
